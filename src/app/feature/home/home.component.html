@@ -1,0 +1,32 @@
+<div class="container center">
+
+  <h1>{{title}}</h1>
+  <form [formGroup]="translateForm">
+  <div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="Paola" formControlName="nameInput" required>
+      <mat-error *ngIf="translateForm.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+  <br>
+  <div>
+    <label>Elija un idioma: </label>
+    <mat-radio-group formControlName="idiomInput">
+      <mat-radio-button *ngFor="let item of items" [value]="item.code">
+        {{item.value}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+  </form>
+  <br>
+  <div>
+    <button mat-raised-button color="primary" class="space-buttons" (click)="sayGreet()">Saludar</button>
+    <button mat-raised-button color="primary" class="space-buttons" (click)="sayName()">Nombre</button>
+    <button mat-raised-button color="primary" class="space-buttons" (click)="sayGoodbye()">Despedir</button>
+  </div>
+  <div>
+    {{response}}
+  </div>
+
+</div>

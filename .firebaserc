@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "saludos-app": {
+      "hosting": {
+        "saludos-app": [
+          "saludos-app"
+        ]
+      }
+    }
+  }
+}

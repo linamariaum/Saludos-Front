@@ -1,0 +1,13 @@
+<p><mat-toolbar color="primary">
+  <span>{{name}}</span>
+  <span class="example-spacer"></span>
+  <div *ngIf="user$ | async as user;else buttonLogin">
+    <span>{{user?.displayName}}    </span>
+    <a mat-raised-button (click)="onLogout()">Logout</a>
+  </div>
+  <ng-template #buttonLogin>
+    <button mat-raised-button color="warn" (click)="onGoogleLogin()">
+      Ingresar con Google
+    </button>
+  </ng-template>
+</mat-toolbar></p>
