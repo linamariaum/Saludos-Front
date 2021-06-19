@@ -20,10 +20,17 @@
   </div>
   </form>
   <br>
+  <div *ngIf="translateForm.invalid; else valid">
+    <button mat-raised-button color="primary" class="space-buttons" disabled>Saludar</button>
+    <button mat-raised-button color="primary" class="space-buttons" disabled>Nombre</button>
+    <button mat-raised-button color="primary" class="space-buttons" disabled>Despedir</button>
+  </div>
   <div>
-    <button mat-raised-button color="primary" class="space-buttons" (click)="sayGreet()">Saludar</button>
-    <button mat-raised-button color="primary" class="space-buttons" (click)="sayName()">Nombre</button>
-    <button mat-raised-button color="primary" class="space-buttons" (click)="sayGoodbye()">Despedir</button>
+    <ng-template #valid>
+      <button mat-raised-button color="primary" class="space-buttons" (click)="sayGreet()">Saludar</button>
+      <button mat-raised-button color="primary" class="space-buttons" (click)="sayName()">Nombre</button>
+      <button mat-raised-button color="primary" class="space-buttons" (click)="sayGoodbye()">Despedir</button>
+    </ng-template>
   </div>
   <div>
     {{response}}

@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   async ngOnInit() {
     await this.loadIdioms()
     if (sessionStorage.getItem('name')) {
-      //this.sayGreet();
+      this.sayGreet();
     }
   }
 
